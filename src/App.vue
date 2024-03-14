@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue' 
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
@@ -19,7 +19,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
 <style scoped>
 header {
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 .logo {
