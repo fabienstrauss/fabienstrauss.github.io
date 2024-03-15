@@ -12,6 +12,6 @@
         height: 100px;
         min-height: 100px;
         color:black;
-        position: absolute;
+        /*position: absolute;*/
     }
 </style>
