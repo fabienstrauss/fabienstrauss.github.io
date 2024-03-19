@@ -20,6 +20,12 @@
 
 <style scoped> 
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
   #app {
     display: flex;
     flex-direction: column;
