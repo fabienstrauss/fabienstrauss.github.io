@@ -39,6 +39,7 @@
   }
 
   #content {
+    overflow-y: auto;
     flex-grow: 1;
   }
 
