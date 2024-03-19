@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-x: hidden;
   }
 
   #navbar {
@@ -35,14 +36,12 @@
     color: white;
     align-items: center;
     justify-content: space-around;
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 
   #content {
-    overflow-x: hidden;
     overflow-y: auto;
     flex-grow: 1;
+    width: 100vw;
   }
 
 </style>
