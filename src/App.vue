@@ -39,7 +39,6 @@
   }
 
   #content {
-    overflow-y: auto;
     flex-grow: 1;
     width: 100vw;
   }
