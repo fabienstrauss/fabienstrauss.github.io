@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import Header from './components/Header.vue'
-  import Main from './components/Main.vue'
+
 </script>
 
 <template>
@@ -31,9 +30,8 @@
     height: 100px;
     min-height: 100px;
     width: 100vw;
-    background-color: #333;
+    background-color: black;
     color: white;
-    display: flex;
     align-items: center;
     justify-content: space-around;
   }

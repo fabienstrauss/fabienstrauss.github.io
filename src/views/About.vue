@@ -8,7 +8,7 @@
 
 .about {
     min-height: 200vh;
-    background-color: blueviolet;
+    background-color: bisque;
 }
 
 </style>
