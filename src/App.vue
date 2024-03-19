@@ -14,9 +14,9 @@
     </nav>
 
     <!-- -- Main Content Area -- -->
-    <main id="content">
+    <div id="content">
       <router-view/>
-    </main>
+    </div>
   </div>
 </template>
 
