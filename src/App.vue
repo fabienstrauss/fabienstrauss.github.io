@@ -30,7 +30,8 @@
 
   #navbar {
     height: 100px;
-    width: 100%;
+    min-height: 100px;
+    width: 100vw;
     background-color: #333;
     color: white;
     display: flex;
