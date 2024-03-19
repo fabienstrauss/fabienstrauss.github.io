@@ -31,12 +31,16 @@
     min-height: 100px;
     width: 100vw;
     background-color: black;
+    display: flex;
     color: white;
     align-items: center;
     justify-content: space-around;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   #content {
+    overflow-x: hidden;
     overflow-y: auto;
     flex-grow: 1;
   }
