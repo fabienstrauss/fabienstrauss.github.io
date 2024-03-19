@@ -7,16 +7,15 @@
   <div id="app">
 
     <!-- -- Navbar -- -->
-    <nav id="navbar">
+    <div id="navbar">
       <router-link to="/">Home</router-link> |
       <router-link to="/work">Work</router-link> |
       <router-link to="/about">About</router-link>
-    </nav>
-
-    <!-- -- Main Content Area -- -->
-    <div id="content">
-      <router-view/>
     </div>
+    <!-- -- Main Content Area -- -->
+    <main id="content">
+      <router-view/>
+    </main>
   </div>
 </template>
 
