@@ -4,19 +4,9 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // Check if the redirect status is stored in localStorage
-        if (sessionStorage.redirect) {
-            const path = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            // Redirect to the stored path
-            window.location.href = path;
-        } else {
-            // Store the current path to sessionStorage before redirecting
-            sessionStorage.redirect = window.location.pathname;
-            // Redirect to the homepage, which will then check sessionStorage
-            // and redirect again to the stored path
-            window.location.href = '/';
-        }
+        // Directly redirect to the correct path using hash routing
+        const path = window.location.pathname;
+        window.location.href = '/' + '#' + path;
     </script>
 </head>
 <body>
