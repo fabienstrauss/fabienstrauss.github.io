@@ -20,13 +20,9 @@
 
 <style scoped> 
 
-  * {
-    margin: 0;
-  }
-
   html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0 px;
+    padding: 0 px;
     height: 100%;
   }
 
