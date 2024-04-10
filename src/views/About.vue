@@ -9,6 +9,7 @@
 .about {
     min-height: 200vh;
     background-color: bisque;
+    margin-top: 75px;
 }
 
 </style>

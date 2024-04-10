@@ -1,30 +1,52 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <div id="app">
 
+  <div id="app">
     <!-- -- Navbar -- -->
-    <div id="navbar">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/work">Work</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <HeaderComponent :showNavbar="showNavbar"/>
+
     <!-- -- Main Content Area -- -->
-    <main id="content">
+    <main id="content" ref="content">
       <router-view/>
     </main>
   </div>
+
 </template>
 
-<style scoped> 
+<script setup lang="ts">
 
-  html, body {
-    margin: 0 px;
-    padding: 0 px;
-    height: 100%;
-  }
+  import { ref, onMounted, onUnmounted } from 'vue';
+  import HeaderComponent from './components/HeaderComponent.vue';
+
+  // Define the ref with a proper type annotation
+  const content = ref<HTMLElement | null>(null);
+
+  const showNavbar = ref(true);
+  let lastScrollPosition = 0;
+
+  const handleScroll = () => {
+    // Now TypeScript knows content.value might be an HTMLElement
+    const currentScrollPosition = content.value?.scrollTop || 0;
+    if (currentScrollPosition > lastScrollPosition) {
+      // Scroll Down
+      showNavbar.value = false;
+    } else {
+      // Scroll Up
+      showNavbar.value = true;
+    }
+    lastScrollPosition = currentScrollPosition;
+  };
+
+  onMounted(() => {
+    content.value?.addEventListener('scroll', handleScroll);
+  });
+
+  onUnmounted(() => {
+    content.value?.removeEventListener('scroll', handleScroll);
+  });
+
+</script>
+
+<style scoped> 
 
   #app {
     display: flex;
@@ -33,20 +55,10 @@
     overflow-x: hidden;
   }
 
-  #navbar {
-    height: 100px;
-    min-height: 100px;
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-around;
-  }
-
   #content {
     flex-grow: 1;
     width: 100vw;
+    overflow-y: auto;
   }
 
 </style>
