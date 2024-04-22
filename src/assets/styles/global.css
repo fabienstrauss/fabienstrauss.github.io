@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 body {
-    margin: 0;
-    font-family: 'Mulish', sans-serif;
-    background: #f0f0f0;
-    color: #333;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #f1f1f1;
+
+    background-color: #101010;
+    /*opacity: 0.4;*/
+    background-image: radial-gradient(#1d1d1d 1.05px, #101010 1.05px);
+    background-size: 25px 25px;
 }
 
 h1, h2, h3, h4, h5, h6 {
