@@ -27,6 +27,7 @@ a {
     font-size: 14px;
 }
 
+/*
 button {
     font-family: 'Mulish', sans-serif;
     font-size: 14px;
@@ -45,6 +46,7 @@ button:hover {
     color: #f0f0f0;
     background-color: #101010;
 }
+*/
 
 a:-webkit-any-link {
     /*color: #101010 !important;*/

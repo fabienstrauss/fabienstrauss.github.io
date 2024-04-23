@@ -88,7 +88,9 @@
         </div>
         <div class="skills">
             <h2>Skills / Technologies</h2>
-            <div class="technology"></div>
+            <div class="technology">
+                <SkillsList />
+            </div>
         </div>
     </div>
 </template>
@@ -97,9 +99,11 @@
 
     import meUrl from '@/assets/me.jpg'
 
+    import TimelineSection from '@/components/TimelineSection.vue'
+    import SkillsList from '@/components/SkillList.vue';
+
     import GitHubIcon from '@/components/GitHubIcon.vue'
     import LinkedInIcon from '@/components/LinkedInIcon.vue'
-    import TimelineSection from '@/components/TimelineSection.vue'
     import TimelineWorkIcon from '@/components/TimelineWorkIcon.vue'
     import TimelineStudyIcon from '@/components/TimelineStudyIcon.vue'
 
@@ -260,6 +264,7 @@
     .skills {
         margin-top: 100px;
         padding: 0 20%;
+        min-height: 100vh;
     }
 
     .link-wrapper {
