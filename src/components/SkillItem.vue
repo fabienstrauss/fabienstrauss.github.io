@@ -1,7 +1,7 @@
 <template>
     <div class="skill-item">
         <div class="skill-name">
-            <font-awesome-icon :icon="['fab', icon]" />
+            <font-awesome-icon :icon="iconArray" />
             <span>{{ name }}</span>
         </div>
         <div class="progress-bar">
@@ -13,9 +13,18 @@
 <script>
     export default {
         props: {
-        name: String,
-        icon: String,
-        progress: Number
+            name: String,
+            icon: String,
+            progress: Number
+        },
+        computed: {
+            iconType() {
+                const brandIcons = ['js-square', 'html5', 'css3-alt', 'python', 'wordpress', 'windows', 'java', 'vuejs', 'docker'];
+                return brandIcons.includes(this.icon) ? 'fab' : 'fas';
+            },
+            iconArray() {
+                return [this.iconType, this.icon];
+            }
         }
     }
 </script>

@@ -87,10 +87,17 @@
             <div class="timeline-end"></div>
         </div>
         <div class="skills">
-            <h2>Skills / Technologies</h2>
+            <h2>Skills / Technologies*</h2>
             <div class="technology">
                 <SkillsList />
             </div>
+            <p class="skills-note">* Ratings based on personal expertise; 100% indicates peak proficiency.</p>
+        </div>
+        <div class="work">
+            <h2>Work</h2>
+            <p>I am committed to continual learning and growth in technology. As I engage with new projects and broaden my expertise, I will update this section to reflect the most recent work and achievements.</p>
+
+
         </div>
     </div>
 </template>
@@ -229,8 +236,12 @@
         max-width: 50%;
     }
 
-    .about h2, .skills h2 {
+    .about h2, .skills h2  {
         margin: 25px 0 50px 0;
+    }
+
+    .work h2 {
+        margin: 25px 0 0 0;
     }
 
     .timeline-start, .timeline-end {
@@ -264,7 +275,16 @@
     .skills {
         margin-top: 100px;
         padding: 0 20%;
-        min-height: 100vh;
+    }
+
+    .skills-note {
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .work {
+        margin-top: 100px;
+        padding: 0 20%;
     }
 
     .link-wrapper {

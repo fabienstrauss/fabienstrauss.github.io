@@ -1,11 +1,16 @@
 <template>
     <div>
-        <div v-for="skill in visibleSkills" :key="skill.name">
-            <SkillItem :name="skill.name" :icon="skill.icon" :progress="skill.progress" />
+        <transition-group name="skill-transition" tag="div">
+            <div v-for="skill in visibleSkills" :key="skill.name">
+                <SkillItem :name="skill.name" :icon="skill.icon" :progress="skill.progress" />
+            </div>
+         </transition-group>
+        <div class="toggle-div">
+            <span>{{ isFolded ? 'Show More' : 'Show Less' }}</span>
+            <button v-if="skills.length > threshold" @click="toggleFold" class="toggle-button">
+                <font-awesome-icon :icon="isFolded ? 'chevron-down' : 'chevron-up'" />
+            </button>
         </div>
-        <button v-if="skills.length > threshold" @click="toggleFold">
-        {{ isFolded ? 'Show More' : 'Show Less' }}
-        </button>
     </div>
 </template>
   
@@ -19,13 +24,17 @@
         data() {
         return {
             skills: [
-            { name: 'JavaScript', icon: 'js-square', progress: 90 },
-            { name: 'HTML5', icon: 'html5', progress: 95 },
-            { name: 'HTML5', icon: 'html5', progress: 95 },
-            { name: 'HTML5', icon: 'html5', progress: 55 },
-            { name: 'HTML5', icon: 'html5', progress: 35 },
-            { name: 'HTML5', icon: 'html5', progress: 55 },
-            { name: 'HTML5', icon: 'html5', progress: 0 },
+                { name: 'Java', icon: 'java', progress: 70 }, 
+                { name: 'Spring Boot', icon: 'leaf', progress: 55 }, 
+                { name: 'JavaScript', icon: 'js-square', progress: 45 },
+                { name: 'Vue.js', icon: 'vuejs', progress: 60 },
+                { name: 'Python', icon: 'python', progress: 40 },
+                { name: 'HTML5', icon: 'html5', progress: 85 },
+                { name: 'CSS', icon: 'css3-alt', progress: 80 },
+                { name: 'SQL', icon: 'database', progress: 60 },
+                { name: 'WP/Elementor', icon: 'wordpress', progress: 85 },
+                { name: 'MS PowerPlatform', icon: 'windows', progress: 70 },
+                { name: 'Docker/K8s', icon: 'docker', progress: 30 }
             ],
             isFolded: true,
             threshold: 5
@@ -42,4 +51,55 @@
         }
         }
     }
-  </script>
+</script>
+
+<style scoped>
+    .toggle-div {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .toggle-div * {
+        margin: 0;
+    }
+
+    .toggle-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    svg {
+        color: white!important;
+    }
+
+    .skill-transition-enter-active, .skill-transition-leave-active {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .skill-transition-enter-from {
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+
+    .skill-transition-enter-to {
+        opacity: 1;
+        transform: translateY(0);  
+    }
+
+    .skill-transition-leave-from {
+        opacity: 1;
+        transform: translateY(0);  
+    }
+
+    .skill-transition-leave-to {
+        opacity: 0;
+        transform: translateY(-20px);
+
+        
+}
+</style>
