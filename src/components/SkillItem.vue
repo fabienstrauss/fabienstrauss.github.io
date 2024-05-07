@@ -1,7 +1,9 @@
 <template>
     <div class="skill-item">
         <div class="skill-name">
-            <font-awesome-icon :icon="iconArray" />
+            <div class="skill-icon">
+                <font-awesome-icon :icon="iconArray" />
+            </div>    
             <span>{{ name }}</span>
         </div>
         <div class="progress-bar">
@@ -35,14 +37,15 @@
         align-items: center;
         margin-bottom: 10px;
     }
-    
-    .skill-name span {
-        margin-left: 10px;
-    }
 
     .skill-name {
+        display: flex;
         min-width: 30%;
         gap: 10px 10px;
+    }
+
+    .skill-icon {
+        width: 25px;
     }
     
     .progress-bar {

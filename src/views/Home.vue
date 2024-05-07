@@ -96,8 +96,28 @@
         <div class="work">
             <h2>Work</h2>
             <p>I am committed to continual learning and growth in technology. As I engage with new projects and broaden my expertise, I will update this section to reflect the most recent work and achievements.</p>
-
-
+            <ProjectGrid />
+            <p class="upcomming-intro">Here are some projects I plan to work on in the future:</p>
+            <FutureProjects />
+        </div>
+        <div class="footer">
+            <div class="seperator"></div>
+            <div class="footer-rows">
+                <div class="footer-row-1">
+                    <h2>Thank you for scrolling!</h2>
+                </div>
+                <div class="footer-row-2">
+                    <div class="footer-socials">
+                        <a href="https://github.com/fabienstrauss" target="_blank"><GitHubIcon/></a>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/fabien-strau%C3%9F/" target="_blank"><LinkedInIcon/></a>
+                    </div>
+                </div>
+                <div class="footer-row-3">
+                    <p>© Copyright 2024 by Fabien Strauß</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -108,6 +128,8 @@
 
     import TimelineSection from '@/components/TimelineSection.vue'
     import SkillsList from '@/components/SkillList.vue';
+    import ProjectGrid from '@/components/ProjectGrid.vue';
+    import FutureProjects from '@/components/FutureProjects.vue';
 
     import GitHubIcon from '@/components/GitHubIcon.vue'
     import LinkedInIcon from '@/components/LinkedInIcon.vue'
@@ -295,5 +317,58 @@
         align-items: center; 
         justify-content: center; 
     }
+
+    .upcomming-intro {
+        margin-top: 50px;
+    }
+
+    .footer {
+        margin: 100px 0 50px 0;
+        padding: 0 20%;
+    }
+
+    .seperator {
+        border-top: 1px solid #f1f1f1;
+    }
+
+    .footer-rows {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-row-1 h2 {
+        margin: 25px 0 0 0;
+    }
+
+    .footer-row-3 p {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .footer-row-2 {
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer-socials svg {
+        cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+        .landing-page, .about, .skills, .work, .footer {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .landing-page, .about, .skills, .work, .footer {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    }
+
 
 </style>
