@@ -365,8 +365,8 @@
 
     @media (max-width: 850px) {
         .landing-page, .about, .skills, .work, .footer {
-            padding-left: 50px;
-            padding-right: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
 

@@ -140,8 +140,8 @@
 
     @media (max-width: 850px) {
         .popup-content {
-            padding-left: 50px;
-            padding-right: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
 
