@@ -47,4 +47,20 @@
         font-size: 14px;
         color: #f1f1f1;
     }
+
+    @media (max-width: 1100px) {
+        
+ 
+    }
+
+    @media (max-width: 850px) {
+   
+        .upcoming-card h3 {
+            font-size: 16px;
+        }
+    
+        .upcoming-card p {
+            font-size: 14px;
+        }
+    }
   </style>

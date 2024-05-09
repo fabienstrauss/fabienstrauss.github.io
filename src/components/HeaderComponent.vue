@@ -2,19 +2,88 @@
     <header :class="{'hidden-navbar': !showNavbar}">
         <div id="navbar">
             <div id="router-link-div">
+                <!--
                 <router-link to="/" class="router-link">Home</router-link>
-                <router-link to="/work" class="router-link">Work</router-link>
                 <router-link to="/about" class="router-link">About</router-link>
+                <router-link to="/work" class="router-link">Work</router-link>
                 <router-link to="/contact" class="router-link">Contact</router-link>
+                -->
+
+                <a 
+                    :class="{'active-link': activeSection === 'landing-page'}"
+                    class="router-link" 
+                    @click.prevent="scrollToSection('landing-page')"
+                >Home</a>
+                <a 
+                    :class="{'active-link': activeSection === 'about'}"
+                    class="router-link" 
+                    @click.prevent="scrollToSection('about')"
+                >About</a>
+                <a 
+                    :class="{'active-link': activeSection === 'work'}"
+                    class="router-link" 
+                    @click.prevent="scrollToSection('work')"
+                >Work</a>
+                <a 
+                    :class="{'active-link': activeSection === 'contact-popup'}"
+                    class="router-link" 
+                    @click.prevent="toggleContactPopup"
+                >Contact</a>
             </div>
+
+            <!-- Conditionally display the contact popup -->
+            <ContactPopup v-if="showContactPopup" @close="toggleContactPopup" />
         </div>
     </header>
 </template>
 
 <script setup lang="ts">
-
-    import logoUrl from '@/assets/temp_logo.svg';
    
+    import { ref, onMounted, onUnmounted } from 'vue';
+    import ContactPopup from './ContactPopup.vue';
+
+    const showContactPopup = ref(false);
+    const activeSection = ref('landing-page');
+
+    function toggleContactPopup() {
+        showContactPopup.value = !showContactPopup.value;
+        activeSection.value = 'contact-popup';
+    }
+
+    function scrollToSection(sectionId: string) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function updateActiveSection() {
+        const sections = [
+            { id: 'landing-page', name: 'landing-page' },
+            { id: 'timeline', name: 'timeline' },
+            { id: 'work', name: 'work' }
+        ];
+
+        for (const section of sections) {
+            const element = document.getElementById(section.id);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+                    activeSection.value = section.name;
+                    break;
+                }
+            }
+        }
+    }
+
+    onMounted(() => {
+        window.addEventListener('scroll', updateActiveSection);
+    });
+
+    onUnmounted(() => {
+        window.removeEventListener('scroll', updateActiveSection);
+    });
+
     defineProps({
         showNavbar: Boolean
     });
@@ -23,17 +92,12 @@
 
 <style scoped> 
 
-    .logo {
-        height: 50px;
-        width: auto;
-    }
-
     .router-link-active {
         color: #f1f1f1 !important;
     }
 
     .router-link {
-        color: #c8c8c8;
+        color: #f1f1f1;
         display: inline-block; 
         transition: transform 0.3s ease;
         margin: 0 10px;

@@ -29,7 +29,7 @@
 <script>
 import gyc from '@/assets/getyourcoach-website-mockup.jpg';
 import wuestenhagenBauausfuehrung from '@/assets/wuestenhagen-bauausfuehrung-website-mockup.jpg';
-import afterlife from '@/assets/getyourcoach-website-mockup.jpg';
+import afterlife from '@/assets/afterlife-website-mockup.jpg';
 import thisPortfolio from '@/assets/getyourcoach-website-mockup.jpg';
 import ProjectPopup from './ProjectPopup.vue';
 
@@ -167,5 +167,29 @@ export default {
         background: rgba(0, 0, 0, 0.7);
         z-index: 10;
         cursor: pointer;
+    }
+
+    @media (max-width: 1100px) {
+        
+ 
+    }
+
+    @media (max-width: 850px) {
+        
+        .project-image {
+            height: 150px;
+        }
+ 
+        .project-grid {
+            gap: 10px;
+        }
+
+        .project-info h3 {
+            font-size: 16px;
+        }
+
+        .project-info {
+            padding: 10px;
+        }
     }
 </style>

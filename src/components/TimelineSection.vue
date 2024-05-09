@@ -124,4 +124,24 @@
         order: 1;
     }
 
+    @media (max-width: 1100px) {
+        
+ 
+    }
+
+    @media (max-width: 850px) {
+   
+        .timeline-time {
+            font-size: 12px;
+        }
+
+        .timeline-content {
+            font-size: 14px;
+        }
+
+        .timeline-title {
+            font-size: 15px;
+        }
+    }
+
   </style>

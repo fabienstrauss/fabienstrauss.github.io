@@ -24,16 +24,16 @@
         data() {
         return {
             skills: [
+                { name: 'HTML5', icon: 'html5', progress: 85 }, 
+                { name: 'CSS', icon: 'css3-alt', progress: 80 },
+                { name: 'WP/Elementor', icon: 'wordpress', progress: 75 },   
                 { name: 'Java', icon: 'java', progress: 70 }, 
+                { name: 'MS PowerPlatform', icon: 'windows', progress: 70 },
+                { name: 'Vue.js', icon: 'vuejs', progress: 60 },
+                { name: 'SQL', icon: 'database', progress: 60 },
                 { name: 'Spring Boot', icon: 'leaf', progress: 55 }, 
                 { name: 'JavaScript', icon: 'js-square', progress: 45 },
-                { name: 'Vue.js', icon: 'vuejs', progress: 60 },
                 { name: 'Python', icon: 'python', progress: 40 },
-                { name: 'HTML5', icon: 'html5', progress: 85 },
-                { name: 'CSS', icon: 'css3-alt', progress: 80 },
-                { name: 'SQL', icon: 'database', progress: 60 },
-                { name: 'WP/Elementor', icon: 'wordpress', progress: 85 },
-                { name: 'MS PowerPlatform', icon: 'windows', progress: 70 },
                 { name: 'Docker/K8s', icon: 'docker', progress: 30 }
             ],
             isFolded: true,
@@ -98,8 +98,19 @@
 
     .skill-transition-leave-to {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-20px);  
+    }
 
+    @media (max-width: 1100px) {
         
-}
+ 
+    }
+
+    @media (max-width: 850px) {
+   
+        .toggle-div span {
+            font-size: 12px;
+        }
+    }
+
 </style>

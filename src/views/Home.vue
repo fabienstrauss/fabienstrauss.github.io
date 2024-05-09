@@ -1,6 +1,6 @@
 <template>
-    <div class="home">
-        <div class="landing-page">
+    <div class="home" id="home">
+        <div class="landing-page" id="landing-page">
             <div class="row">
                 <img :src="meUrl" id="me-image" alt="Me-Image">
             </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="about">
+        <div class="about" id="about">
             <h2>My Timeline</h2>
             <div class="timeline-start"></div>
             <div class="timeline">
@@ -93,7 +93,7 @@
             </div>
             <p class="skills-note">* Ratings based on personal expertise; 100% indicates peak proficiency.</p>
         </div>
-        <div class="work">
+        <div class="work" id="work">
             <h2>Work</h2>
             <p>I am committed to continual learning and growth in technology. As I engage with new projects and broaden my expertise, I will update this section to reflect the most recent work and achievements.</p>
             <ProjectGrid />
@@ -211,7 +211,7 @@
     }
 
     #me-image {
-        width: 75px;
+        width: 90px;
         border-radius: 100px;
         margin-bottom: 20px;
         border: 1px solid #f1f1f1;
@@ -262,10 +262,6 @@
         margin: 25px 0 50px 0;
     }
 
-    .work h2 {
-        margin: 25px 0 0 0;
-    }
-
     .timeline-start, .timeline-end {
         width: 100%;
         position: relative;
@@ -305,7 +301,8 @@
     }
 
     .work {
-        margin-top: 100px;
+        margin-top: 75px;
+        padding-top: 25px;
         padding: 0 20%;
     }
 
@@ -367,6 +364,15 @@
         .landing-page, .about, .skills, .work, .footer {
             padding-left: 20px;
             padding-right: 20px;
+        }
+
+        .row h1 {
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        .row p, .work p {
+            font-size: 14px;
         }
     }
 

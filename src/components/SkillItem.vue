@@ -42,6 +42,7 @@
         display: flex;
         min-width: 30%;
         gap: 10px 10px;
+        align-items: center;
     }
 
     .skill-icon {
@@ -64,4 +65,19 @@
         justify-content: center;
         transform: translateX(-1px) translateY(-1px)
     }
+
+    @media (max-width: 1100px) {
+        
+    }
+
+    @media (max-width: 850px) {
+        .skill-name span {
+            font-size: 12px;
+        }
+
+        .skill-name {
+            min-width: 50%;
+        }
+    }
+
 </style>
