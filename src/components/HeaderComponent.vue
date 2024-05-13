@@ -101,6 +101,7 @@
         display: inline-block; 
         transition: transform 0.3s ease;
         margin: 0 10px;
+        cursor: pointer;
     }
 
     .router-link:hover {
