@@ -59,7 +59,7 @@
                     {
                         id: 1,
                         name: 'This Portfolio',
-                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        description: 'This portfolio represents my very own project, showcasing my initial foray into coding a website from scratch. As my first experience in completely hardcoding a website, it is an evolving work in progress, meant to be updated and refined over time. This ongoing development not only allows me to continuously enhance my programming skills but also ensures that the portfolio remains up-to-date, particularly with my timeline and projects.<br><br><strong>Future enhancements include:</strong><ul><li>Adding different views/pages for "work" and "about", since due to time constraints I decided to make that in a later step.</li><li>Adding various animations, such as entrance animations or hover effects.</li><li>Fixing a bug in the mobile view of the header.</li><li>Experimenting with different sections or adding new ones where I can be creative.</li></ul>',
                         images: [thisPortfolio],
                         tags: ['Vue.js', 'Typescript', 'GitHub Pages & Actions'],
                         image: thisPortfolio
@@ -67,7 +67,7 @@
                     {
                         id: 2,
                         name: 'Get Your Coach',
-                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        description: 'The "Get Your Coach" website was a project I developed for a friend’s app. This project marked the first undertaking for my agency, Afterlife Studios. Throughout the development process, I gained substantial experience and learned a great deal about web design and development. While the website may not be perfect and there are aspects I would approach differently now with more experience, it represents a significant milestone in my career. I might revisit and refine the site in the future to apply my improved skills. You can visit the website <a href="https://getyourcoach-app.com" target="_blank">here</a>.',
                         images: [gyc_1, gyc_2, gyc_3],
                         tags: ['Wordpress', 'Elementor', 'Custom Html/CSS', 'Graphic Design', 'Google Analytics'],
                         image: gyc
@@ -75,7 +75,7 @@
                     {
                         id: 3,
                         name: 'Afterlife Studios',
-                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        description: 'The Afterlife Studios website is a project that holds a special place for me, as it represents the pinnacle of my design skills. Unfortunately, the startup is no longer active, but I began this project towards the end of its operations and didn’t get the chance to finish it. Despite being incomplete, I consider it a great showcase of what I can achieve with WordPress and Elementor. You can visit the unfinished site <a href="https://afterlife-studios.de" target="_blank">here</a>. The texts are placeholders, and only the home page is complete. This project demonstrates my growth in design, especially when compared to the "Get Your Coach" project. <br><br><strong>Missing elements include:</strong><ul><li>Complete text content and placeholder replacements.</li><li>Design and implementation of additional pages (About, Services, Contact, etc.).</li><li>Responsive design adjustments.</li><li>Finalizing all interactive elements and animations.</li><li>Optimizing loading times.</li><li>And more...</li></ul>',
                         images: [afterlife_1, afterlife_2, afterlife_3, afterlife_4],
                         tags: ['Wordpress', 'Elementor', 'GSAP', 'Custom Html/CSS/JS', 'Graphic Design', 'Webdesign', 'Google Analytics'],
                         image: afterlife
@@ -83,7 +83,7 @@
                     {
                         id: 4,
                         name: 'Wüstenhagen Bauausführung',
-                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        description: 'The Wüstenhagen Bauausführung website was a significant milestone for me as it was the first project delivered to a real customer outside of my personal network. The client needed a fresh, modern website for his construction business, and we successfully delivered it. Unfortunately, the client has since decided to close his business, so the website will eventually be shut down. Despite this, I am proud to showcase this project due to the positive feedback it received from the client and his network. The included screenshots below highlight various parts of the website.',
                         images: [wuestenhagen_1, wuestenhagen_2, wuestenhagen_3, wuestenhagen_4, wuestenhagen_5],
                         tags: ['Wordpress', 'Elementor', 'Custom Html/CSS'],
                         image: wuestenhagenBauausfuehrung

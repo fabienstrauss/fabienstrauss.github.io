@@ -3,7 +3,7 @@
         <div class="popup-content">
             <button class="close-btn" @click="$emit('close')">&times;</button>
             <h2>{{ project.name }}</h2>
-            <p>{{ project.description }}</p>
+            <p v-html="project.description"></p>
             <div class="project-tags">
                 <span class="tag" v-for="(tag, index) in project.tags" :key="index">{{ tag }}</span>
             </div>
@@ -78,6 +78,10 @@
         line-height: 18px;
     }
 
+    a {
+        color: lightblue !important;
+    }
+
     .project-tags {
         display: flex;
         flex-wrap: wrap;
@@ -113,11 +117,11 @@
     .project-images {
         display: grid;
         gap: 10px;
-        grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .full-width {
-        grid-column: span 2; /* Spans across both columns */
+        grid-column: span 2; 
         width: 100%;
     }
 
@@ -142,6 +146,12 @@
         .popup-content {
             padding-left: 20px;
             padding-right: 20px;
+        }
+
+        .project-images {
+            gap: 0px;
+            row-gap: 10px;
+            grid-template-columns: repeat(1, 1fr); 
         }
     }
 
