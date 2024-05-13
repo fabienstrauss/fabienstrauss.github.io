@@ -27,68 +27,84 @@
 </template>
 
 <script>
-import gyc from '@/assets/getyourcoach-website-mockup.jpg';
-import wuestenhagenBauausfuehrung from '@/assets/wuestenhagen-bauausfuehrung-website-mockup.jpg';
-import afterlife from '@/assets/afterlife-website-mockup.jpg';
-import thisPortfolio from '@/assets/getyourcoach-website-mockup.jpg';
-import ProjectPopup from './ProjectPopup.vue';
+    import gyc from '@/assets/images/getyourcoach-website-mockup.jpg';
+    import wuestenhagenBauausfuehrung from '@/assets/images/wuestenhagen-website-mockup.jpg';
+    import afterlife from '@/assets/images/afterlife-website-mockup.jpg';
+    import thisPortfolio from '@/assets/images/portfolio-website-mockup.jpg';
 
-export default {
-    components: {
-        ProjectPopup
-    },
-    data() {
-        return {
-            projects: [
-                {
-                    id: 1,
-                    name: 'This Portfolio',
-                    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                    images: [gyc, wuestenhagenBauausfuehrung, gyc, gyc, gyc],
-                    tags: ['Vue.js', 'Typescript', 'GitHub Pages & Actions'],
-                    image: thisPortfolio
-                },
-                {
-                    id: 2,
-                    name: 'Get Your Coach',
-                    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                    images: [gyc, wuestenhagenBauausfuehrung, gyc, gyc],
-                    tags: ['Wordpress', 'Elementor', 'Custom Html/CSS', 'Graphic Design', 'Google Analytics'],
-                    image: gyc
-                },
-                {
-                    id: 3,
-                    name: 'Afterlife Studios',
-                    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                    images: [gyc, wuestenhagenBauausfuehrung, gyc],
-                    tags: ['Wordpress', 'Elementor', 'GSAP', 'Custom Html/CSS/JS', 'Graphic Design', 'Webdesign', 'Google Analytics'],
-                    image: afterlife
-                },
-                {
-                    id: 4,
-                    name: 'Wüstenhagen Bauausführung',
-                    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                    images: [gyc],
-                    tags: ['Wordpress', 'Elementor', 'Custom Html/CSS'],
-                    image: wuestenhagenBauausfuehrung
-                }
-            ],
-            isPopupVisible: false,
-            selectedProject: null
-        };
-    },
-    methods: {
-        showPopup(project) {
-            this.selectedProject = project;
-            this.isPopupVisible = true;
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    import gyc_1 from '@/assets/images/getyourcoach-screenshot-1.jpg';
+    import gyc_2 from '@/assets/images/getyourcoach-screenshot-2.jpg';
+    import gyc_3 from '@/assets/images/getyourcoach-screenshot-3.jpg';
+
+    import afterlife_1 from '@/assets/images/afterlife-screenshot-1.jpg';
+    import afterlife_2 from '@/assets/images/afterlife-screenshot-2.jpg';
+    import afterlife_3 from '@/assets/images/afterlife-screenshot-3.jpg';
+    import afterlife_4 from '@/assets/images/afterlife-screenshot-4.jpg';
+
+    import wuestenhagen_1 from '@/assets/images/wuestenhagen-screenshot-1.jpg';
+    import wuestenhagen_2 from '@/assets/images/wuestenhagen-screenshot-2.jpg';
+    import wuestenhagen_3 from '@/assets/images/wuestenhagen-screenshot-3.jpg';
+    import wuestenhagen_4 from '@/assets/images/wuestenhagen-screenshot-4.jpg';
+    import wuestenhagen_5 from '@/assets/images/wuestenhagen-screenshot-5.jpg';
+
+    import ProjectPopup from './ProjectPopup.vue';
+
+    export default {
+        components: {
+            ProjectPopup
         },
-        closePopup() {
-            this.isPopupVisible = false;
-            document.body.style.overflow = 'auto'; // Restore scrolling
+        data() {
+            return {
+                projects: [
+                    {
+                        id: 1,
+                        name: 'This Portfolio',
+                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        images: [thisPortfolio],
+                        tags: ['Vue.js', 'Typescript', 'GitHub Pages & Actions'],
+                        image: thisPortfolio
+                    },
+                    {
+                        id: 2,
+                        name: 'Get Your Coach',
+                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        images: [gyc_1, gyc_2, gyc_3],
+                        tags: ['Wordpress', 'Elementor', 'Custom Html/CSS', 'Graphic Design', 'Google Analytics'],
+                        image: gyc
+                    },
+                    {
+                        id: 3,
+                        name: 'Afterlife Studios',
+                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        images: [afterlife_1, afterlife_2, afterlife_3, afterlife_4],
+                        tags: ['Wordpress', 'Elementor', 'GSAP', 'Custom Html/CSS/JS', 'Graphic Design', 'Webdesign', 'Google Analytics'],
+                        image: afterlife
+                    },
+                    {
+                        id: 4,
+                        name: 'Wüstenhagen Bauausführung',
+                        description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+                        images: [wuestenhagen_1, wuestenhagen_2, wuestenhagen_3, wuestenhagen_4, wuestenhagen_5],
+                        tags: ['Wordpress', 'Elementor', 'Custom Html/CSS'],
+                        image: wuestenhagenBauausfuehrung
+                    }
+                ],
+                isPopupVisible: false,
+                selectedProject: null
+            };
+        },
+        methods: {
+            showPopup(project) {
+                this.selectedProject = project;
+                this.isPopupVisible = true;
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            },
+            closePopup() {
+                this.isPopupVisible = false;
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
         }
     }
-}
 </script>
 
 <style scoped>
@@ -177,7 +193,7 @@ export default {
     @media (max-width: 850px) {
         
         .project-image {
-            height: 150px;
+            height: 200px;
         }
  
         .project-grid {
@@ -190,6 +206,10 @@ export default {
 
         .project-info {
             padding: 10px;
+        }
+
+        .project-grid {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 </style>

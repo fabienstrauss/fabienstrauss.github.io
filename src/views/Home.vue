@@ -124,7 +124,7 @@
 
 <script setup lang="ts">
 
-    import meUrl from '@/assets/me.jpg'
+    import meUrl from '@/assets/images/me.jpg'
 
     import TimelineSection from '@/components/TimelineSection.vue'
     import SkillsList from '@/components/SkillList.vue';
