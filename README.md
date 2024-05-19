@@ -1,39 +1,47 @@
-# portfolio
+# Fabien Strauß Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to my personal portfolio project! This project showcases my skills, projects, and experiences. It is designed to be an evolving platform where I continuously update and improve my work, learn new technologies, and showcase my growth as a developer.
 
-## Recommended IDE Setup
+## Table of Contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Future Enhancements](#future-enhancements)
+- [Contact](#contact)
+- [License](#license)
 
-## Type Support for `.vue` Imports in TS
+## Introduction
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+This portfolio is my first experience in completely hardcoding a website. It serves as both a showcase of my work and a learning platform. As I continue to develop my skills, I will keep this portfolio up-to-date with new projects and improvements.
 
-## Customize configuration
+## Features
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Responsive Design:** The portfolio is designed to work seamlessly across different devices and screen sizes.
+- **Project Showcases:** Detailed descriptions and images of my projects, including links to live sites where applicable.
+- **Dynamic Content:** Sections like the timeline and skills are regularly updated to reflect my latest experiences and proficiencies.
 
-## Project Setup
+## Technologies Used
 
-```sh
-npm install
-```
+- **Vue.js**
+- **Vite**
+- **TypeScript**
+- **GitHub Pages & Actions**
 
-### Compile and Hot-Reload for Development
+## Future Enhancements
 
-```sh
-npm run dev
-```
+- Implement different views/pages for "work" and "about".
+- Add various animations (e.g., entrance animations, hover effects).
+- Fix minor bugs.
+- Experiment with different sections and add new ones.
+- Clean up the code.
 
-### Type-Check, Compile and Minify for Production
+## Contact
 
-```sh
-npm run build
-```
+You can reach me via:
+- **Email:** [fabien.strauss2002@gmail.com](mailto:fabien.strauss2002@gmail.com)
+- **LinkedIn:** [Fabien Strauß](https://www.linkedin.com/in/fabien-strau%C3%9F/)
 
-### Lint with [ESLint](https://eslint.org/)
+## License
 
-```sh
-npm run lint
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
