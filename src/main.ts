@@ -5,14 +5,25 @@ import './assets/styles/global.css';
 
 // Importing FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPython, faJsSquare, faHtml5, faCss3Alt, faWordpress, faWindows, faJava, faVuejs, faDocker } from '@fortawesome/free-brands-svg-icons';
+import {
+    faPython,
+    faJsSquare,
+    faHtml5,
+    faCss3Alt,
+    faWordpress,
+    faWindows,
+    faJava,
+    faVuejs,
+    faDocker,
+    faReact
+} from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faLeaf, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faTerminal } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 // Adding icons to the library
-library.add(faPython, faJsSquare, faHtml5, faCss3Alt, faWordpress, faWindows, faJava, faVuejs, faDocker,
+library.add(faPython, faJsSquare, faHtml5, faCss3Alt, faWordpress, faWindows, faJava, faVuejs, faReact, faDocker,
     faDatabase, faLeaf, faArrowRight,
     faTerminal, 
     faChevronDown, faChevronUp);

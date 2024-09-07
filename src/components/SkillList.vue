@@ -31,7 +31,8 @@
                 { name: 'MS PowerPlatform', icon: 'windows', progress: 70 },
                 { name: 'Vue.js', icon: 'vuejs', progress: 60 },
                 { name: 'SQL', icon: 'database', progress: 60 },
-                { name: 'Spring Boot', icon: 'leaf', progress: 55 }, 
+                { name: 'ReactJS', icon: 'react', progress: 55 },
+                { name: 'Spring Boot', icon: 'leaf', progress: 55 },
                 { name: 'JavaScript', icon: 'js-square', progress: 45 },
                 { name: 'Python', icon: 'python', progress: 40 },
                 { name: 'Docker/K8s', icon: 'docker', progress: 30 }

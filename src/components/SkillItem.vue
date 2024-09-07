@@ -21,7 +21,7 @@
         },
         computed: {
             iconType() {
-                const brandIcons = ['js-square', 'html5', 'css3-alt', 'python', 'wordpress', 'windows', 'java', 'vuejs', 'docker'];
+                const brandIcons = ['js-square', 'html5', 'css3-alt', 'python', 'wordpress', 'windows', 'java', 'vuejs', 'react', 'docker'];
                 return brandIcons.includes(this.icon) ? 'fab' : 'fas';
             },
             iconArray() {
