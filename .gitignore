@@ -11,3 +11,12 @@ node_modules/
 *.cache
 dist/
 tmp/
+/.claude/
+/.github/
+/.vscode/
+
+# macOS
+.DS_Store
+
+# JetBrains IDE
+.idea/

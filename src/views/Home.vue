@@ -1,379 +1,681 @@
 <template>
-    <div class="home" id="home">
-        <div class="landing-page" id="landing-page">
-            <div class="row">
-                <img :src="meUrl" id="me-image" alt="Me-Image">
-            </div>
-            <div class="row">
-                <h1>Hi, I am Fabien!</h1>
-            </div>
-            <div class="row">
-                <p class="me-description">I'm deeply passionate about technology and design, driven by a constant curiosity to explore new things. I love learning and am always eager to push the boundaries of what’s possible.</p>
-            </div>
-            <div class="row socials">
-                <div>
-                    <a href="https://github.com/fabienstrauss" target="_blank" class="link-wrapper">
-                        <GitHubIcon/>
-                        <p>GitHub</p>
-                    </a>
-                </div>
-                <div>
-                    <a href="https://www.linkedin.com/in/fabien-strau%C3%9F/" target="_blank" class="link-wrapper">
-                        <LinkedInIcon/>
-                        <p>LinkedIn</p>
-                    </a>
-                </div>
-            </div>
+  <div class="home">
+    <HomeHero/>
+    <div class="about" id="about" ref="aboutSection">
+      <h2>Education & Experience</h2>
+      <div v-if="!isMobile" class="timeline">
+        <div class="left">
+          <TimelineSection
+              icon="stromnetz-berlin-logo.jpg"
+              time_start="09/2020"
+              time_end="09/2023"
+              where="Stromnetz Berlin GmbH"
+              title="Dual Student in Business Informatics"
+              content="During my studies I actively applied learned concepts and skills in projects with my practical Partner, Stromnetz Berlin GmbH."
+              :indicatorPosition="isMobile ? 'left' : 'right'"
+          />
+          <TimelineSection
+              icon="stromnetz-berlin-logo.jpg"
+              time_start="10/2023"
+              time_end="Present"
+              where="Stromnetz Berlin GmbH"
+              title="Application Support Engineer"
+              content="Responsible for maintaining and optimizing IT applications - deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
+              :indicatorPosition="isMobile ? 'left' : 'right'"
+          />
         </div>
+        <div class="right">
+          <TimelineSection
+              icon="hwr-berlin-logo.jpg"
+              time_start="09/2020"
+              time_end="09/2023"
+              where="HWR Berlin"
+              title="Bachelor of Science Business Informatics"
+              content="Dual Student at HWR Berlin, gaining knowledge in computer science and business administration."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
+          <TimelineSection
+              icon="tu-berlin-logo.jpg"
+              time_start="10/2025"
+              time_end="Present"
+              where="TU Berlin"
+              title="Master’s in Computer Science"
+              content="Pursuing advanced studies at TU Berlin out of intrinsic passion for technology and continuous personal growth."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
+        </div>
+      </div>
+      <div v-if="isMobile" class="timeline">
+        <div class="left">
+          <TimelineSection
+              icon="hwr-berlin-logo.jpg"
+              time_start="09/2020"
+              time_end="09/2023"
+              where="HWR Berlin"
+              title="Bachelor of Science Business Informatics"
+              content="Dual Student at HWR Berlin, gaining knowledge in computer science and business administration."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
+          <TimelineSection
+              icon="stromnetz-berlin-logo.jpg"
+              time_start="09/2020"
+              time_end="09/2023"
+              where="Stromnetz Berlin GmbH"
+              title="Dual Student in Business Informatics"
+              content="During my studies I actively applied learned concepts and skills in projects with my practical Partner, Stromnetz Berlin GmbH."
+              :indicatorPosition="isMobile ? 'left' : 'right'"
+          />
 
-        <div class="about" id="about">
-            <h2>My Timeline</h2>
-            <div class="timeline-start"></div>
-            <div class="timeline">
-                <div class="left">
-                    <TimelineSection 
-                        :icon="TimelineWorkIcon"
-                        time_start="09/2020" 
-                        time_end="09/2023" 
-                        title="Dual Student in Business Informatics" 
-                        content="During my studies I actively applied learned concepts and skills in projects with my practical Partner, Stromnetz Berlin GmbH."
-                        indicatorPosition="right"
-                    />
-                    <TimelineSection 
-                        :icon="TimelineWorkIcon"
-                        time_start="01/2023" 
-                        time_end="03/2024" 
-                        title="CEO of Afterlife Studios UG" 
-                        content="Founder and leader of Afterlife Studios, specializing in web design and digital services. Although the company eventually folded, I regard the experience and skills gained as highly valuable."
-                        indicatorPosition="right"
-                    />
-                    <TimelineSection 
-                        :icon="TimelineWorkIcon"
-                        time_start="10/2023" 
-                        time_end="Present" 
-                        title="IT-Application-Consultant at Stromnetz Berlin GmbH" 
-                        content="Responsible for maintaining and optimizing IT applications, regularly undertaking additional tasks beyond my formal job description, including programming, to further enhance system efficiency."
-                        indicatorPosition="right"
-                    />
-                </div>
-
-                <div class="right">
-                    <TimelineSection 
-                        :icon="TimelineStudyIcon"
-                        time_start="09/2020" 
-                        time_end="09/2023" 
-                        title="Bachelor of Science Business Informatics" 
-                        content="Dual Student at HWR Berlin, gaining knowledge in computer science and business adiministration."
-                        indicatorPosition="left"
-                    />
-                    <TimelineSection 
-                        :icon="TimelineStudyIcon"
-                        time_start="04/2024" 
-                        time_end="Present" 
-                        title="Additional Studies for a Master's in Computer Science" 
-                        content="Currently enrolled as a student, accumulating credits for a Master's degree in Computer Science."
-                        indicatorPosition="left"
-                    />
-                    <TimelineSection 
-                        :icon="TimelineStudyIcon"
-                        time_start="2025" 
-                        time_end="?" 
-                        title="Master's in Computer Science" 
-                        content="Actively gathering necessary credits for my Master’s in Computer Science, aiming to deepen expertise and specialize."
-                        indicatorPosition="left"
-                    />
-                </div>
-            </div>
-            <div class="timeline-end"></div>
         </div>
-        <div class="skills">
-            <h2>Skills / Technologies*</h2>
-            <div class="technology">
-                <SkillsList />
-            </div>
-            <p class="skills-note">* Ratings based on personal expertise; 100% indicates peak proficiency.</p>
+        <div class="right">
+          <TimelineSection
+              icon="stromnetz-berlin-logo.jpg"
+              time_start="10/2023"
+              time_end="Present"
+              where="Stromnetz Berlin GmbH"
+              title="Application Support Engineer"
+              content="Responsible for maintaining and optimizing IT applications - deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
+              :indicatorPosition="isMobile ? 'left' : 'right'"
+          />
+          <TimelineSection
+              icon="tu-berlin-logo.jpg"
+              time_start="10/2025"
+              time_end="Present"
+              where="TU Berlin"
+              title="Master’s in Computer Science"
+              content="Pursuing advanced studies at TU Berlin out of intrinsic passion for technology and continuous personal growth."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
         </div>
-        <div class="work" id="work">
-            <h2>Work</h2>
-            <p>I am committed to continual learning and growth in technology. As I engage with new projects and broaden my expertise, I will update this section to reflect the most recent work and achievements.</p>
-            <ProjectGrid />
-            <p class="upcomming-intro">Here are some projects I plan to work on in the future:</p>
-            <FutureProjects />
-        </div>
-        <div class="footer">
-            <div class="seperator"></div>
-            <div class="footer-rows">
-                <div class="footer-row-1">
-                    <h2>Thank you for scrolling!</h2>
-                </div>
-                <div class="footer-row-2">
-                    <div class="footer-socials">
-                        <a href="https://github.com/fabienstrauss" target="_blank"><GitHubIcon/></a>
-                    </div>
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/fabien-strau%C3%9F/" target="_blank"><LinkedInIcon/></a>
-                    </div>
-                </div>
-                <div class="footer-row-3">
-                    <p>© Copyright 2024 by Fabien Strauß</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="skills" ref="skillsSection">
+      <div class="skills-header">
+        <h2>Skills</h2>
+        <button
+            type="button"
+            class="toggle-view"
+            @click="showSkillsAsList = !showSkillsAsList"
+            :aria-pressed="showSkillsAsList.toString()"
+        >
+          <span v-if="!showSkillsAsList">Show as list</span>
+          <span v-else>Show as marquee</span>
+          <font-awesome-icon :icon="['fas','table-list']" class="tv-icon" />
+        </button>
+      </div>
+
+      <Transition mode="out-in" :css="false" @enter="sectionEnter" @leave="sectionLeave">
+
+        <div v-if="!showSkillsAsList" key="marquee-view">
+          <h3>Frameworks & Programming-Languages</h3>
+          <Marquee :skills="programmingLanguages" direction="forwards" />
+
+          <h3>Technologies</h3>
+          <Marquee :skills="technologies" direction="reverse" />
+        </div>
+
+        <div v-else key="list-view">
+          <h3>Frameworks & Programming-Languages</h3>
+          <ul class="skill-list">
+            <li v-for="(s,i) in programmingLanguages" :key="s.name">
+              <font-awesome-icon :icon="[s.prefix || 'fab', s.icon]" class="skill-icon" />
+              <span>{{ s.name }}</span>
+            </li>
+          </ul>
+
+          <h3>Technologies</h3>
+          <ul class="skill-list">
+            <li v-for="(s,i) in technologies" :key="s.name">
+              <font-awesome-icon :icon="[s.prefix || 'fab', s.icon]" class="skill-icon" />
+              <span>{{ s.name }}</span>
+            </li>
+          </ul>
+        </div>
+      </Transition>
+    </div>
+
+    <div class="work" id="work" ref="workSection">
+      <h2>Work</h2>
+      <p>I am committed to continual learning and growth in technology. As I engage with new projects and broaden my expertise, I will update this section to reflect the most recent work and achievements.</p>
+      <ProjectGrid />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
-    import meUrl from '@/assets/images/me.jpg'
+    import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-    import TimelineSection from '@/components/TimelineSection.vue'
-    import SkillsList from '@/components/SkillList.vue';
-    import ProjectGrid from '@/components/ProjectGrid.vue';
-    import FutureProjects from '@/components/FutureProjects.vue';
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
 
-    import GitHubIcon from '@/components/GitHubIcon.vue'
-    import LinkedInIcon from '@/components/LinkedInIcon.vue'
-    import TimelineWorkIcon from '@/components/TimelineWorkIcon.vue'
-    import TimelineStudyIcon from '@/components/TimelineStudyIcon.vue'
+    import HomeHero from "@/components/HomeComponents/HomeHero.vue";
+    import TimelineSection from '@/components/HomeComponents/TimelineSection.vue'
+    import ProjectGrid from '@/components/HomeComponents/ProjectGrid.vue';
+    import Marquee from "@/components/HomeComponents/SkillMarquee.vue";
+    import GitHubIcon from '@/components/icons/GitHubIcon.vue'
+    import LinkedInIcon from '@/components/icons/LinkedInIcon.vue'
+
+    const isMobile = ref(window.innerWidth <= 850);
+    const showSkillsAsList = ref(false);
+
+    // Refs for animations
+    const aboutSection = ref<HTMLElement | null>(null);
+    const skillsSection = ref<HTMLElement | null>(null);
+    const workSection = ref<HTMLElement | null>(null);
+
+    const programmingLanguages = ref([
+      { name: 'JavaScript',icon: 'js-square', prefix: 'fab', position: 1},
+      { name: 'Java',      icon: 'java',      prefix: 'fab', position: 2},
+      { name: 'HTML5',     icon: 'html5',     prefix: 'fab', position: 3},
+      { name: 'CSS3',      icon: 'css3-alt',  prefix: 'fab', position: 4},
+      { name: 'Vue.js',    icon: 'vuejs',     prefix: 'fab', position: 5},
+      { name: 'Python',    icon: 'python',    prefix: 'fab', position: 6},
+      { name: 'ReactJS',   icon: 'react',     prefix: 'fab', position: 7},
+      { name: 'SQL',       icon: 'database',  prefix: 'fas', position: 8}
+    ])
+
+    const technologies = ref([
+      { name: 'Docker/K8s',       icon: 'docker',     prefix: 'fab', position: 1},
+      { name: 'Spring Boot',      icon: 'leaf',       prefix: 'fas', position: 2},
+      { name: 'WP/Elementor',     icon: 'wordpress',  prefix: 'fab', position: 3},
+      { name: 'Azure',            icon: 'cloud',      prefix: 'fas', position: 4},
+      { name: 'MS PowerPlatform', icon: 'windows',    prefix: 'fab', position: 5},
+      { name: 'threeJS',          icon: '3',          prefix: 'fas', position: 6},
+    ])
+
+    function onResize() {
+      isMobile.value = window.innerWidth <= 850;
+      // Refresh ScrollTrigger on resize
+      ScrollTrigger.refresh();
+    }
+
+    const RESPECT_RM = false;
+    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
+    const rm = RESPECT_RM && prefersReduced;
+
+    const DUR_FADE = rm ? 0 : 0.25;
+    const DUR_ITEM = rm ? 0 : 0.25;
+    const STAGGER = rm ? 0 : 0.1;
+    const DIST = rm ? 0 : 22;
+
+    const sectionEnter = (el: Element, done: () => void) => {
+      gsap.fromTo(el, {autoAlpha: 0}, {autoAlpha: 1, duration: DUR_FADE, ease: "power1.out"});
+
+      const items = el.querySelectorAll<HTMLLIElement>('.skill-list li');
+
+      if (!items.length) {
+        gsap.delayedCall(DUR_FADE, done);
+        return
+      }
+
+      gsap.set(items, { autoAlpha: 0, y: DIST, filter: 'blur(3px)', willChange: 'transform,opacity,filter '});
+      gsap.to(items, {
+        autoAlpha: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        duration: DUR_ITEM,
+        ease: 'power3.out',
+        stagger: STAGGER,
+        onComplete: done
+      });
+    };
+
+    const sectionLeave = (el: Element, done: () => void) => {
+      gsap.to(el, { autoAlpha: 0, duration: rm ? 0 : 0.2, ease: 'power1.in', onComplete: done });
+    };
+
+    // Hero entrance animation (one-time only)
+    function setupHeroAnimation() {
+      const heroElements = document.querySelectorAll('.home-hero .hero-text .row');
+
+      if (heroElements.length > 0) {
+        gsap.fromTo(heroElements,
+          {
+            y: 50,
+            opacity: 0,
+            scale: 0.95
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power2.out",
+            stagger: 0.2,
+            delay: 0.3
+          }
+        );
+      }
+    }
+
+    // Clean ScrollTrigger implementation with custom scroller
+    function setupScrollAnimations() {
+      // Clear any existing ScrollTriggers
+      ScrollTrigger.killAll();
+
+      // Get the custom scroll container
+      const scroller = document.getElementById('content');
+      if (!scroller) {
+        console.error('Custom scroller #content not found');
+        return;
+      }
+
+      console.log('🎯 Setting up ScrollTrigger with custom scroller:', scroller);
+
+      // 1. Section headers - simple fade up
+      gsap.utils.toArray('.about h2, .skills h2, .work h2').forEach((header) => {
+        gsap.fromTo(header,
+          {
+            y: 30,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: header,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      });
+
+      // 2. Timeline items - slide up from bottom (excluding indicators)
+      gsap.utils.toArray('.timeline-details').forEach((item, index) => {
+        gsap.fromTo(item,
+          {
+            y: 60,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      });
+
+      // 3. Skills section content
+      const skillsContent = document.querySelector('.skills > div:not(.skills-header)');
+      if (skillsContent) {
+        gsap.fromTo(skillsContent,
+          {
+            y: 40,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: skillsContent,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      }
+
+      // 3.1. Skills header (including the toggle button)
+      const skillsHeader = document.querySelector('.skills-header');
+      if (skillsHeader) {
+        gsap.fromTo(skillsHeader,
+          {
+            y: 30,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: skillsHeader,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      }
+
+      // 4. Work section paragraph
+      const workP = document.querySelector('.work p');
+      if (workP) {
+        gsap.fromTo(workP,
+          {
+            y: 20,
+            opacity: 0
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: workP,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      }
+
+      // 5. Project cards - slide up with stagger
+      gsap.utils.toArray('.project-card').forEach((card, index) => {
+        gsap.fromTo(card,
+          {
+            y: 80,
+            opacity: 0,
+            scale: 0.95
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+              scroller: scroller
+            }
+          }
+        );
+      });
+
+      console.log('✅ ScrollTrigger animations configured with custom scroller');
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', onResize);
+
+      // Hero animation (immediate)
+      setupHeroAnimation();
+
+      // ScrollTrigger animations (wait for custom scroller to be ready)
+      setTimeout(() => {
+        setupScrollAnimations();
+      }, 500);
+    });
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', onResize);
+      ScrollTrigger.killAll();
+    });
 
 </script>
 
 <style scoped>
 
-    .landing-page {
-        min-height: calc(100vh - 75px);
-        margin-top: 75px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20%;
-    }
-
-    .socials {
-        gap: 0px 10px;
-    }
-
-    .socials div {
-        display: flex;
-        flex-direction: row;
-        align-items: center; 
-        justify-content: center; 
-        height: 30px;
-        padding: 3px 20px;
-        border: 1px solid #f1f1f1;
-        border-radius: 100px;
-        cursor: pointer;
-        gap: 10px;
-    }
-
-    .socials div:hover {
-        background-color: #f1f1f1;
-        color: #101010;
-        transition: all .2s linear;
-	        -webkit-transition: all .2s linear;
-	        -moz-transition: all .2s linear;
-    }
-
-    .socials div:hover .socials-icon {
-        fill: #101010;
-    }
-
-    .socials p {
-        font-size: 16px;
-        margin: 0 0 0 10px;
-    }
-
-    .socials-icon {
-        height: 25px;
-        width: auto;
-        transition: fill 0.3s;
-    }
-
-    .row {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;      
-        width: 100%;
-        margin-bottom: 0px;
-    }
-
-    .row h1 {
-        font-size: 50px;
-        line-height: 60px;
-        margin: 0px 0px 10px 0px;
-    }
-
-    .me-description {
-        font-size: 16px;
-        line-height: 20px;
-        margin: 0px 0px 20px 0px;
-    }
-
-    #me-image {
-        width: 90px;
-        border-radius: 100px;
-        margin-bottom: 20px;
-        border: 1px solid #f1f1f1;
-    }
-
-    .flex-end {
-        display: flex;
-        align-items: flex-end;
-        margin-block-end: 0px !important;
-    }
-
-    .about {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: left;
-        padding: 0 20%;
+    h2 {
+      font-size: 30px;
     }
 
     .about .timeline {
-        display: flex;
-        justify-content: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
 
     .about .timeline .left, .about .timeline .right {
-        flex: 1; 
+      flex: 1;
     }
 
     .about .timeline .left {
-        flex: 1 1 50%;
-        border-right: 0.5px solid #f1f1f1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 50%;
+      flex: 1 1 50%;
+      border-right: 1px solid #4ade80;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
+      padding-right: 30px;
+      padding-top: 75px;
     }
 
     .about .timeline .right {
-        border-left: 0.5px solid #f1f1f1;
-        flex: 1 1 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 50%;
+      border-left: 1px solid #4ade80;
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
+      padding-left: 30px;
     }
 
-    .about h2, .skills h2  {
-        margin: 25px 0 50px 0;
+    .about .timeline .left::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      z-index: 0;
     }
 
-    .timeline-start, .timeline-end {
-        width: 100%;
-        position: relative;
-        height: 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .about .timeline .right::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      z-index: 0;
     }
 
-    .timeline-start::before {
-        content: '';
-        width: 5px; 
-        height: 5px;
-        background-color: #f1f1f1;
-        border-radius: 50%;
-        display: block;
+    /* Timeline arrow at the end */
+    .about .timeline::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid #4ade80;
+      filter: drop-shadow(0 0 4px #4ade80);
+      z-index: 1;
     }
 
-    .timeline-end::after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 10px solid #f1f1f1;
-        display: block;
+    .about h2 {
+      margin: 25px 0 50px 0;
     }
+
+    .skills-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .toggle-view {
+      appearance: none;
+      border: 1px solid #f1f1f1;
+      background-color: transparent;
+      color: #f1f1f1;
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Space Mono", monospace;
+      font-weight: 400;
+
+      transition:
+          background-color .25s ease,
+          color .25s ease,
+          transform .25s ease,
+          box-shadow .25s ease,
+          border-color .25s ease;
+      will-change: transform;
+    }
+
+    .toggle-view:hover {
+      background-color: #f1f1f1;
+      color: #101010;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      border-color: transparent;
+    }
+
+    .toggle-view:active {
+      transform: translateY(0) scale(.98);
+      box-shadow: 0 6px 16px rgba(0,0,0,.2);
+    }
+
+    .toggle-view:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px #4ade80, 0 0 0 6px rgba(47, 214, 55, 0.25);
+    }
+
+    :deep(.tv-icon) {
+      transition: transform .25s ease, opacity .25s ease;
+    }
+    .toggle-view:hover :deep(.tv-icon) {
+      transform: translateX(2px);
+      opacity: .9;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 10px 12px;
+      margin: 10px 0 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border: 1px solid #f1f1f1;
+      border-radius: 50px;
+      background: #101010;
+
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      will-change: transform, opacity, filter;
+    }
+    .skill-icon { font-size: 1.1rem; flex: 0 0 auto; }
+    .skill-list li span { min-width: 0; }
 
     .skills {
-        margin-top: 100px;
-        padding: 0 20%;
-    }
-
-    .skills-note {
-        font-size: 12px;
-        margin-top: 25px;
+      margin-top: 100px;
+      width: 100%;
     }
 
     .work {
-        margin-top: 75px;
-        padding-top: 25px;
-        padding: 0 20%;
+      margin-top: 75px;
+      padding-top: 25px;
     }
 
-    .link-wrapper {
-        text-decoration: none; 
-        color: inherit; 
-        display: flex;
-        flex-direction: row;
-        align-items: center; 
-        justify-content: center; 
+    .about {
+      margin-top: 25px;
     }
 
-    .upcomming-intro {
-        margin-top: 50px;
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .footer {
-        margin: 100px 0 50px 0;
-        padding: 0 20%;
+    /* Initial animation states - removed opacity: 0 to let ScrollTrigger handle states */
+
+    :deep(.hero-inner), .about, .skills, .work, .footer {
+      max-width: var(--container-max-width, 1200px);
+      padding-left: var(--container-padding, 4em);
+      padding-right: var(--container-padding, 4em);
+      box-sizing: border-box;
     }
 
-    .seperator {
-        border-top: 1px solid #f1f1f1;
-    }
-
-    .footer-rows {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .footer-row-1 h2 {
-        margin: 25px 0 0 0;
-    }
-
-    .footer-row-3 p {
-        font-size: 10px;
-        margin: 0;
-    }
-
-    .footer-row-2 {
-        display: flex;
-        gap: 10px;
-    }
-
-    .footer-socials svg {
-        cursor: pointer;
-    }
-
-    @media (max-width: 1100px) {
-        .landing-page, .about, .skills, .work, .footer {
-            padding-left: 10%;
-            padding-right: 10%;
-        }
+    @media (prefers-reduced-motion: reduce) {
+      .toggle-view, :deep(.tv-icon) {
+        transition: none;
+      }
     }
 
     @media (max-width: 850px) {
-        .landing-page, .about, .skills, .work, .footer {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
 
-        .row h1 {
-            font-size: 30px;
-            line-height: 30px;
-        }
+      .row h1 {
+          font-size: 30px;
+          line-height: 30px;
+      }
 
-        .row p, .work p {
-            font-size: 14px;
-        }
+      .row p, .work p {
+          font-size: 14px;
+      }
+
+      .about .timeline {
+        display: block;
+        padding-bottom: 50px;
+      }
+
+      .about .timeline::after {
+        height: 200px !important;
+      }
+
+      .about .timeline .left,
+      .about .timeline .right {
+        width: 100%;
+        max-width: none;
+        border-left: 2px solid #4ade80;
+        border-right: none;
+        display: block;
+        padding: 0 20px 0 30px;
+        box-sizing: border-box;
+      }
+
+
+      .about .timeline .left::before {
+        top: 0; right: calc(100% - 2px);
+      }
+
+      .about .timeline .right::before {
+        top: 0; left: 0px;
+      }
+
+      /* Mobile timeline arrow */
+      .about .timeline::after {
+        top: 100%;
+        left: 1px;
+        bottom: auto;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 10px solid #4ade80;
+        filter: drop-shadow(0 0 4px #4ade80);
+      }
+
     }
 
 

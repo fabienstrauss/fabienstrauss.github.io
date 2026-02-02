@@ -1,6 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    scroll-behavior: auto;
+}
+
+html, body, #app, #content {
+    overflow-anchor: none;
+}
+
+/* Consistent spacing system */
+:root {
+    --container-padding-desktop: 4em;
+    --container-padding-tablet: 3em;
+    --container-padding-mobile: 2em;
+    --container-max-width: 1200px;
+}
+
+/* Apply responsive container padding globally */
+@media (max-width: 1100px) {
+    :root {
+        --container-padding: var(--container-padding-tablet);
+    }
+}
+
+@media (max-width: 850px) {
+    :root {
+        --container-padding: var(--container-padding-mobile);
+    }
+}
+
+@media (min-width: 1101px) {
+    :root {
+        --container-padding: var(--container-padding-desktop);
+    }
+}
+
 .space-mono-regular {
     font-family: "Space Mono", monospace;
     font-weight: 400;
@@ -14,9 +53,13 @@ body {
     color: #f1f1f1;
 
     background-color: #101010;
-    /*opacity: 0.4;*/
+
+    /*
+    background-color: #101010;
+    //opacity: 0.4;
     background-image: radial-gradient(#1d1d1d 1.05px, #101010 1.05px);
     background-size: 25px 25px;
+    */
 }
 
 h1, h2, h3, h4, h5, h6 {

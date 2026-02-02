@@ -2,13 +2,14 @@
     <header :class="{'hidden-navbar': !showNavbar}">
         <div id="navbar">
             <div id="router-link-div">
-                <!--
+
                 <router-link to="/" class="router-link">Home</router-link>
                 <router-link to="/about" class="router-link">About</router-link>
-                <router-link to="/work" class="router-link">Work</router-link>
-                <router-link to="/contact" class="router-link">Contact</router-link>
-                -->
+                <router-link to="/projects" class="router-link">Projects</router-link>
+                <!--<router-link to="/contact" class="router-link">Contact</router-link>-->
 
+
+              <!--
                 <a 
                     :class="{'active-link': activeSection === 'landing-page'}"
                     class="router-link" 
@@ -29,6 +30,7 @@
                     class="router-link" 
                     @click.prevent="toggleContactPopup"
                 >Contact</a>
+            -->
             </div>
 
             <!-- Conditionally display the contact popup -->
