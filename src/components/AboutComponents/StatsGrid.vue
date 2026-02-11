@@ -7,8 +7,7 @@
           <h3>Travel Log</h3>
         </div>
         <div class="placeholder-content">
-          <p class="globe-text">Interactive Globe Widget</p>
-          <p class="sub-text">(Coming Soon)</p>
+          <div ref="globeContainerEl" class="globe-mount"></div>
         </div>
       </div>
     </div>
@@ -63,14 +62,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { gsap } from 'gsap';
+import { createGlobe } from 'travel3dglobe';
 import { useGitHubStats } from '@/composables/useGitHubStats';
 
 const { totalContributions, fetchGitHubContributions } = useGitHubStats();
 const githubStatEl = ref<HTMLElement | null>(null);
+const globeContainerEl = ref<HTMLElement | null>(null);
+let globeInstance: { destroy?: () => void } | null = null;
 
 onMounted(async () => {
+  if (globeContainerEl.value) {
+    let loadedConfig: Record<string, unknown> = {};
+    try {
+      const configUrl = `${import.meta.env.BASE_URL}globe-config.json`;
+      const response = await fetch(configUrl);
+      if (!response.ok) {
+        throw new Error(`Failed to load config: ${response.status}`);
+      }
+      loadedConfig = await response.json();
+    } catch (error) {
+      console.error('Could not load globe-config.json, using default config.', error);
+    }
+
+    globeInstance = await createGlobe({
+      container: globeContainerEl.value,
+      enableDebugPanel: false,
+      config: loadedConfig
+    });
+  }
+
   // Ensure data is fetched
   await fetchGitHubContributions();
 
@@ -88,6 +110,11 @@ onMounted(async () => {
       }
     );
   }
+});
+
+onUnmounted(() => {
+  globeInstance?.destroy?.();
+  globeInstance = null;
 });
 </script>
 
@@ -164,18 +191,14 @@ onMounted(async () => {
 }
 
 .placeholder-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   flex-grow: 1;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4);
+  min-height: 220px;
 }
 
-.globe-text {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.globe-mount {
+  position: absolute;
+  inset: 0;
 }
 
 @media (max-width: 900px) {
