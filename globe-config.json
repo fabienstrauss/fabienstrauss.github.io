@@ -26,7 +26,8 @@
       "TUR",
       "EGY",
       "USA",
-      "CAN"
+      "CAN",
+      "CHE"
     ],
     "highlightColor": "#f1f1f1",
     "defaultColor": "#000000",
@@ -113,7 +114,8 @@
       "TUR",
       "EGY",
       "USA",
-      "CAN"
+      "CAN",
+      "CHE"
     ]
   }
 }
