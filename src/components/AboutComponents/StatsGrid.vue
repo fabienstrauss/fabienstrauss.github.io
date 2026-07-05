@@ -20,7 +20,7 @@
           <h3>LeetCode</h3>
         </div>
         <div class="stat-content">
-          <div class="big-number">220+</div>
+          <div class="big-number">300+</div>
           <p class="stat-label">Questions Solved</p>
         </div>
       </div>
@@ -31,7 +31,7 @@
           <h3>Hackathons</h3>
         </div>
         <div class="stat-content">
-          <div class="big-number">6</div>
+          <div class="big-number">7</div>
           <p class="stat-label">Participated</p>
         </div>
       </div>
@@ -50,10 +50,10 @@
       <!-- Books Read -->
       <div class="stat-card">
         <div class="card-header">
-          <h3>Books Read</h3>
+          <h3>New Sports Tried</h3>
         </div>
         <div class="stat-content">
-          <div class="big-number">1</div>
+          <div class="big-number">2</div>
           <p class="stat-label">This Year</p>
         </div>
       </div>

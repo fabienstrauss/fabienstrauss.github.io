@@ -1,7 +1,7 @@
 <template>
   <div class="now-tag">
     <span class="pulsing-dot"></span>
-    <span class="activity-text">Studying Machine Learning</span>
+    <span class="activity-text">Finally getting paid to code</span>
   </div>
 </template>
 
