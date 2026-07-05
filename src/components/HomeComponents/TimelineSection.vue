@@ -11,7 +11,9 @@
       whileHover="hover"
     >
       <div class="timeline-header">
-        <img :src="imageSrc" alt="icon" class="icon" />
+        <span class="icon-frame" :class="{ 'svg-icon-frame': isSvgIcon }">
+          <img :src="imageSrc" alt="icon" class="icon" />
+        </span>
         <div class="timeline-meta">
           <div class="timeline-where">{{ where }}</div>
           <div class="timeline-time">{{ time_start }} - {{ time_end }}</div>
@@ -39,7 +41,20 @@
     icon: string
   }>()
 
-  const imageSrc = new URL(`../../assets/images/${props.icon}`, import.meta.url).href
+  const iconAssets = import.meta.glob('../../assets/{images,svg}/**/*', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  }) as Record<string, string>
+
+  const imageSrc = computed(() => {
+    const iconPath = props.icon.startsWith('svg/')
+        ? `../../assets/${props.icon}`
+        : `../../assets/images/${props.icon}`
+
+    return iconAssets[iconPath]
+  })
+  const isSvgIcon = computed(() => props.icon.endsWith('.svg'))
 
   const isMobile = ref(window.innerWidth <= 850)
   function onResize() {
@@ -74,7 +89,6 @@
   const where             = props.where
   const title             = props.title
   const content           = props.content
-  const icon              = props.icon
 
   const MotionDiv = motion.div
 </script>
@@ -108,13 +122,35 @@
       /* Zwei Zeilen à 1.2em = 2.4em Höhe */
     }
 
+    .icon-frame {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      margin-right: 8px;
+    }
+
+    .svg-icon-frame {
+      width: 2.4em;
+      height: 2.4em;
+      padding: 4px;
+      background: #fff;
+      border-radius: 15%;
+      box-sizing: border-box;
+    }
+
     .icon {
       width: auto;
       height: auto;
       max-height: 2.4em;
       object-fit: contain;
-      margin-right: 8px;
       border-radius: 15%;
+    }
+
+    .svg-icon-frame .icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
     }
 
     .timeline-icon-indicator-wrapper {
