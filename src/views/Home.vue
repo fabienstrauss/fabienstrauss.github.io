@@ -189,22 +189,24 @@
 
     const programmingLanguages = ref([
       { name: 'JavaScript',icon: 'js-square', prefix: 'fab', position: 1},
-      { name: 'Java',      icon: 'java',      prefix: 'fab', position: 2},
-      { name: 'HTML5',     icon: 'html5',     prefix: 'fab', position: 3},
-      { name: 'CSS3',      icon: 'css3-alt',  prefix: 'fab', position: 4},
-      { name: 'Vue.js',    icon: 'vuejs',     prefix: 'fab', position: 5},
-      { name: 'Python',    icon: 'python',    prefix: 'fab', position: 6},
-      { name: 'ReactJS',   icon: 'react',     prefix: 'fab', position: 7},
-      { name: 'SQL',       icon: 'database',  prefix: 'fas', position: 8}
+      { name: 'TypeScript',icon: 'code',      prefix: 'fas', position: 2},
+      { name: 'Java',      icon: 'java',      prefix: 'fab', position: 3},
+      { name: 'Vue.js',    icon: 'vuejs',     prefix: 'fab', position: 4},
+      { name: 'Python',    icon: 'python',    prefix: 'fab', position: 5},
+      { name: 'ReactJS',   icon: 'react',     prefix: 'fab', position: 6},
+      { name: 'PostgreSQL',icon: 'database',  prefix: 'fas', position: 7}
     ])
 
     const technologies = ref([
-      { name: 'Docker/K8s',       icon: 'docker',     prefix: 'fab', position: 1},
-      { name: 'Spring Boot',      icon: 'leaf',       prefix: 'fas', position: 2},
-      { name: 'WP/Elementor',     icon: 'wordpress',  prefix: 'fab', position: 3},
-      { name: 'Azure',            icon: 'cloud',      prefix: 'fas', position: 4},
-      { name: 'MS PowerPlatform', icon: 'windows',    prefix: 'fab', position: 5},
-      { name: 'threeJS',          icon: '3',          prefix: 'fas', position: 6},
+      { name: 'Docker',           icon: 'docker',      prefix: 'fab', position: 1},
+      { name: 'Kubernetes',       icon: 'cube',        prefix: 'fas', position: 2},
+      { name: 'Spring Boot',      icon: 'leaf',        prefix: 'fas', position: 3},
+      { name: 'Node.js',          icon: 'node-js',     prefix: 'fab', position: 4},
+      { name: 'Azure',            icon: 'cloud',       prefix: 'fas', position: 5},
+      { name: 'AWS',              icon: 'aws',         prefix: 'fab', position: 6},
+      { name: 'CI/CD Pipelines',  icon: 'code-branch', prefix: 'fas', position: 7},
+      { name: 'Git',              icon: 'git-alt',     prefix: 'fab', position: 8},
+      { name: 'threeJS',          icon: '3',           prefix: 'fas', position: 9},
     ])
 
     function onResize() {
