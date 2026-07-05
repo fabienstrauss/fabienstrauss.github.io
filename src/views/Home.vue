@@ -15,12 +15,12 @@
               :indicatorPosition="isMobile ? 'left' : 'right'"
           />
           <TimelineSection
-              icon="stromnetz-berlin-logo.jpg"
-              time_start="10/2023"
+              icon="svg/reonic-logo.svg"
+              time_start="07/2026"
               time_end="Present"
-              where="Stromnetz Berlin GmbH"
-              title="Application Support Engineer"
-              content="Responsible for maintaining and optimizing IT applications - deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
+              where="Reonic"
+              title="Software Engineer"
+              content="Building AI-native software that helps renewable installers plan, sell, and manage solar, heat pump, and energy projects."
               :indicatorPosition="isMobile ? 'left' : 'right'"
           />
         </div>
@@ -30,10 +30,11 @@
               time_start="09/2020"
               time_end="09/2023"
               where="HWR Berlin"
-              title="Bachelor of Science Business Informatics"
+              title="B.Sc. Computer Science & Economics"
               content="Dual Student at HWR Berlin, gaining knowledge in computer science and business administration."
               :indicatorPosition="isMobile ? 'left' : 'left'"
           />
+          <!--
           <TimelineSection
               icon="tu-berlin-logo.jpg"
               time_start="10/2025"
@@ -41,6 +42,16 @@
               where="TU Berlin"
               title="Master’s in Computer Science"
               content="Pursuing advanced studies at TU Berlin out of intrinsic passion for technology and continuous personal growth."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
+          -->
+          <TimelineSection
+              icon="stromnetz-berlin-logo.jpg"
+              time_start="10/2023"
+              time_end="06/2026"
+              where="Stromnetz Berlin GmbH"
+              title="Systems Engineer"
+              content="Responsible for maintaining and optimizing IT applications, deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
               :indicatorPosition="isMobile ? 'left' : 'left'"
           />
         </div>
@@ -63,20 +74,20 @@
               where="Stromnetz Berlin GmbH"
               title="Dual Student in Business Informatics"
               content="During my studies I actively applied learned concepts and skills in projects with my practical Partner, Stromnetz Berlin GmbH."
-              :indicatorPosition="isMobile ? 'left' : 'right'"
+              :indicatorPosition="isMobile ? 'left' : 'left'"
           />
-
         </div>
         <div class="right">
           <TimelineSection
               icon="stromnetz-berlin-logo.jpg"
               time_start="10/2023"
-              time_end="Present"
+              time_end="06/2026"
               where="Stromnetz Berlin GmbH"
-              title="Application Support Engineer"
-              content="Responsible for maintaining and optimizing IT applications - deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
-              :indicatorPosition="isMobile ? 'left' : 'right'"
+              title="Systems Engineer"
+              content="Responsible for maintaining and optimizing IT applications, deploying and managing applications on Kubernetes, configuring Azure API Management, and developing automation scripts and CI/CD pipelines."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
           />
+          <!--
           <TimelineSection
               icon="tu-berlin-logo.jpg"
               time_start="10/2025"
@@ -84,6 +95,16 @@
               where="TU Berlin"
               title="Master’s in Computer Science"
               content="Pursuing advanced studies at TU Berlin out of intrinsic passion for technology and continuous personal growth."
+              :indicatorPosition="isMobile ? 'left' : 'left'"
+          />
+          -->
+          <TimelineSection
+              icon="svg/reonic-logo.svg"
+              time_start="07/2026"
+              time_end="Present"
+              where="Reonic"
+              title="Software Engineer"
+              content="Building AI-native software that helps renewable installers plan, sell, and manage solar, heat pump, and energy projects."
               :indicatorPosition="isMobile ? 'left' : 'left'"
           />
         </div>
