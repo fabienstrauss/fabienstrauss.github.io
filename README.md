@@ -28,20 +28,6 @@ This portfolio is my first experience in completely hardcoding a website. It ser
 - **TypeScript**
 - **GitHub Pages & Actions**
 
-## Future Enhancements
-
-- Implement different views/pages for "work" and "about".
-- Add various animations (e.g., entrance animations, hover effects).
-- Fix minor bugs.
-- Experiment with different sections and add new ones.
-- Clean up the code.
-
-## Contact
-
-You can reach me via:
-- **Email:** [fabien.strauss2002@gmail.com](mailto:fabien.strauss2002@gmail.com)
-- **LinkedIn:** [Fabien Strauß](https://www.linkedin.com/in/fabien-strau%C3%9F/)
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
