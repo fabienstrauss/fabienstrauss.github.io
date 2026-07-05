@@ -9,6 +9,12 @@
         <div class="row">
           <img :src="meUrl" id="me-image" alt="Me-Image">
         </div>
+        <div class="row location-row">
+          <div class="location-tag">
+            <font-awesome-icon :icon="['fas', 'map-pin']" class="location-icon" />
+            <span>Located in Berlin</span>
+          </div>
+        </div>
         <div class="row">
           <h1 class="h1 splt-words">Hi, I am Fabien!</h1>
         </div>
@@ -212,6 +218,29 @@
     height: 25px;
     width: auto;
     transition: fill 0.3s;
+  }
+
+  .location-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(241, 241, 241, 0.08);
+    border: 1px solid rgba(241, 241, 241, 0.22);
+    color: #cfcfcf;
+    padding: 5px 12px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  .location-icon {
+    color: #cfcfcf;
+    font-size: 0.75rem;
+  }
+
+  .location-row {
+    margin-bottom: 12px;
   }
 
   .row {
